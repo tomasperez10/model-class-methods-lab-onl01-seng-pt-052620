@@ -32,7 +32,7 @@ class Boat < ActiveRecord::Base
     # regularly. Just know that we can get this out of the database in
     # milliseconds whereas it would take whole seconds for Ruby to do the same.
     #
-    # joins(:classifications).group("boats.id").having("COUNT(*) = 3").select("boats.*")
+    joins(:classifications).group("boats.id").having("COUNT(*) = 3").select("boats.*")
   end
 
   def self.non_sailboats
